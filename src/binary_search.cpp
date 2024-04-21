@@ -15,7 +15,8 @@ int binarySearch(const std::vector<int>& data, int target){
         } else if (target <= data[mid]){
             right = mid;
         } else {
-            return -1;
+            return -2;
         }
+    return -1;
     
     }
