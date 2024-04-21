@@ -1,22 +1,20 @@
 #include <vector>
-#include <cstdlib> // rand(), srand()
-#include <ctime>   // time()
 
-int binarySearch(const std::vector<int>& data, int target){
+int binarySearch(const std::vector<int>& data, int target) {
     int left = 0;
     int right = data.size() - 1;
-    int mid = left+right)/2;
-    while(left <= right){
-        mid = (left+right)/2;
-        if(target == data[mid]){
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (target == data[mid]) {
             return mid;
-        } else if (target >= data[mid]){
-            left = mid;
-        } else if (target <= data[mid]){
-            right = mid;
+        } else if (target > data[mid]) {
+            left = mid + 1;
         } else {
-            return -2;
+            right = mid - 1;
         }
-    return -1;
-    
     }
+
+    return -1;
+}
