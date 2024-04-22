@@ -1,4 +1,4 @@
-#include <vector>
+#include "../include/binary_search.h"
 
 int binarySearch(const std::vector<int>& data, int target) {
     int left = 0;
